@@ -1,0 +1,49 @@
+{
+  "name": "@bedrocker/mc-region",
+  "version": "0.0.1",
+  "private": false,
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "test": "jest --config jestconfig.json",
+    "version": "npm run format && git add -A src"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.0.0",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/BedRocker/mc-region.git"
+  },
+  "keywords": [
+    "minecraft",
+    "region",
+    "parser"
+  ],
+  "author": "Alex Scott <alex@codetheoristdevelopments.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BedRocker/mc-region/issues"
+  },
+  "homepage": "https://github.com/BedRocker/mc-region#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "protodef": "^1.7.1"
+  }
+}
